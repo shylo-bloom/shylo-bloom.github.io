@@ -25,7 +25,6 @@ a {
   }
 }
 
-
 /* -------------------------------- 
 
 Patterns - reusable parts of our design
@@ -36,7 +35,7 @@ Patterns - reusable parts of our design
   margin-top: 25rem;
   padding: 1.6em 2.4em;
   font-size: 1.4rem;
-  letter-spacing: .15em;
+  letter-spacing: 0.15em;
   color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
@@ -102,7 +101,7 @@ img.cd-album-cover {
   height: 50%;
   display: block;
   margin-left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   opacity: 1;
   z-index: -1;
   box-shadow: 15px 15px 5px #242322;
@@ -143,12 +142,12 @@ Modal window
 }
 .cd-modal h1::after {
   /* ink/brush separation */
-  content: '';
+  content: "";
   display: block;
   width: 130px;
   height: 18px;
   background: url(../img/ink-separation.svg) no-repeat center center;
-  margin: .2em auto 0;
+  margin: 0.2em auto 0;
 }
 .cd-modal p {
   line-height: 1.6;
@@ -164,7 +163,8 @@ Modal window
   height: 45px;
   width: 45px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3) url(../img/cd-icon-close.svg) no-repeat center center;
+  background: rgba(0, 0, 0, 0.3) url(../img/cd-icon-close.svg) no-repeat center
+    center;
   /* image replacement */
   overflow: hidden;
   text-indent: 100%;
@@ -176,7 +176,8 @@ Modal window
   -ms-transform: scale(0);
   -o-transform: scale(0);
   transform: scale(0);
-  -webkit-transition: -webkit-transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+  -webkit-transition: -webkit-transform 0.3s 0s, visibility 0s 0.3s,
+    opacity 0.3s 0s;
   -moz-transition: -moz-transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
   transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
 }
@@ -197,7 +198,8 @@ Modal window
 .cd-modal.visible .modal-close {
   visibility: visible;
   opacity: 1;
-  -webkit-transition: -webkit-transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+  -webkit-transition: -webkit-transform 0.3s 0s, visibility 0s 0s,
+    opacity 0.3s 0s;
   -moz-transition: -moz-transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
   transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
   -webkit-transform: scale(1);
@@ -346,19 +348,10 @@ Transition Layer
   }
 }
 
-
-
 /* ----------- Non-Retina Screens ----------- */
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
 }
 
 /* ----------- Retina Screens ----------- */
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) { 
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
 }
