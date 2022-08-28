@@ -8,6 +8,9 @@ export const useWindowSize = () => {
 
   
   useEffect(() => {
+    
+		
+    
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
@@ -15,8 +18,8 @@ export const useWindowSize = () => {
       });
     }
     if (typeof window != "undefined") {
-      };
-
+    };
+    
       window.addEventListener("resize", handleResize);
 
       // Recursion
