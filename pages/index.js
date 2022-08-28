@@ -1,17 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@mui/material";
 import styles from "../styles/Home.module.css";
 import { useWindowSize } from "../components/useWindowSize";
 import { useEffect, useState } from "react";
+import { Menu, MenuItem } from "@mui/material";
 
 export default function Home() {
-  let frameProportion = 1.78, //png frame aspect ratio
-    frames = 25; //number of png frames
   const size = useWindowSize();
   const [modalWindowClass, setModalWindowClass] = useState("");
   const [transitionBackgroundClass, setTransitionBackgroundClass] = useState("");
+
+  let frameProportion = 1.78, frames = 25; //png frame aspect ratio & number of png frames
   let windowWidth = size.width,
     windowHeight = size.height,
     layerHeight = null,
@@ -54,6 +53,9 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      <nav>
+        <p>Home</p><p>About</p><p>Contact Us</p><p>Music</p>
+      </nav>
       {size.width}px / {size.height}px
       <Head>
         <title>Create Next App</title>
@@ -61,15 +63,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="cd-main-content">
-        {/* <main className={styles.main} > */}
-        {/* <main className="cd-main-content"> */}
+        
         <h1 className={styles.title}>
           {/* Welcome to <a href="https://nextjs.org">Next.js!</a> */}
+        {/* <h1>Shylo Bloom</h1> */}
         </h1>
 
-        {/* <h1>Shylo Bloom</h1> */}
         {/* <h5>Harvest - Released ©2022</h5> */}
-        {/* <img className="cd-album-cover" src="img/trees-001.JPG" /> */}
+        <img src="/Users/chrispalmer/Desktop/next-app/shylo-bloom/img/trees-001.jpg" />
         <div className="center">
           <button
             className="cd-btn cd-modal-trigger"
@@ -82,7 +83,6 @@ export default function Home() {
         </div>
 
         <div className={`cd-modal ${modalWindowClass}`}>
-          {/* <div className={`cd-modal`}> */}
           <div className="modal-content">
             <h1>Join Our Mailing List</h1>
             <p>
@@ -152,14 +152,14 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by {/* <span className={styles.logo}> */}
-          <Image
+          {/* Powered by <span className={styles.logo}> */}
+          {/* <Image
             className="cd-album-cover"
             src="/vercel.svg"
             alt="Vercel Logo"
             width={72}
             height={16}
-          />
+          /> */}
           {/* </span> */}
         </a>
       </footer>
