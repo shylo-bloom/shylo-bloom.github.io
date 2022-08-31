@@ -10,6 +10,7 @@ export default function Home() {
   const [modalWindowClass, setModalWindowClass] = useState("");
   const [transitionBackgroundClass, setTransitionBackgroundClass] =
     useState("");
+  const [menuZIndex, setMenuZIndex] = useState(2);
 
   let frameProportion = 1.78,
     frames = 25; //png frame aspect ratio & number of png frames
@@ -32,6 +33,7 @@ export default function Home() {
     e.preventDefault();
     console.log(e);
     setTransitionBackgroundClass("visible opening");
+    setMenuZIndex(1);
     setTimeout(function () {
       setModalWindowClass("visible");
     }, 300);
@@ -43,6 +45,7 @@ export default function Home() {
     setTransitionBackgroundClass("visible closing");
     setModalWindowClass("");
     setTransitionBackgroundClass("");
+    setMenuZIndex(2);
   };
 
   useEffect(() => {
@@ -55,7 +58,10 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <nav className="menu">
+      <nav className="menu"
+                  style={{
+                    zIndex: menuZIndex,
+                  }}>
         <Title></Title>
         <div className="links">
         <p>Home</p>
