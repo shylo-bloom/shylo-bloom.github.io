@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
+
+
+// Add this when npm music player is installed
+// const withImages = require("next-images");
+// const withTM = require("next-transpile-modules")(["@madzadev/audio-player"]);
+
+// module.exports = withImages(withTM());
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,

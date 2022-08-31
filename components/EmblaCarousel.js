@@ -32,7 +32,6 @@ const EmblaCarousel = ({ slides, info }) => {
           {slides && info && slides.map((index) => (
             <div className="embla__slide" key={index}>
               <div className="embla__slide__inner">     
-              {console.log(info[index])}
               <h3 className="embla__slide__title">{info && info[index].song_title}</h3>     
               <p className="embla__slide__filepath">{info && info[index].mp3}</p>     
                 <img

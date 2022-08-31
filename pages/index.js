@@ -38,6 +38,7 @@ export default function Home() {
     useState("");
   const [menuZIndex, setMenuZIndex] = useState(2);
   const [scroll, setScroll] = useState("");
+  const [email, setEmail] = useState("")
 
   let frameProportion = 1.78,
     frames = 25; //png frame aspect ratio & number of png frames
@@ -73,12 +74,18 @@ export default function Home() {
 
   const handleCloseClick = (e) => {
     e.preventDefault();
-    console.log(e);
     setTransitionBackgroundClass("visible closing");
     setModalWindowClass("");
     setTransitionBackgroundClass("");
     setMenuZIndex(2);
   };
+
+  const handleEmailSubmit = (e) => {
+    console.log(e.target.value)
+  }
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value)
+  }
 
   useEffect(() => {
     if (!window.requestAnimationFrame) {
@@ -136,10 +143,11 @@ export default function Home() {
               Stay informed on upcoming shows, albums, promos tours and
               merchandise !
             </p>
-            <form>
-              <label for="#email">@: </label>
-              <input id="email" type="email" placeholder="email@domain.com"></input>
-            </form>
+            <div>
+              <label htmlFor="#email">@: </label>
+              <input id="email" type="email" placeholder="email@domain.com" value={email} onChange={(e) => handleEmailChange(e)}></input>
+              <button type="submit" value={email} onClick={(e) => handleEmailSubmit(e)}>SEND</button>
+            </div>
           </div>
           <button
             className="modal-close"
