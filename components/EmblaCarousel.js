@@ -6,7 +6,7 @@ import { mediaByIndex } from "../media";
 const EmblaCarousel = ({ slides, info }) => {
   const [viewportRef, embla] = useEmblaCarousel({
     loop: true,
-    skipSnaps: false
+    skipSnaps: false,
   });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
@@ -29,19 +29,25 @@ const EmblaCarousel = ({ slides, info }) => {
     <div className="embla">
       <div className="embla__viewport" ref={viewportRef}>
         <div className="embla__container">
-          {slides && info && slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <div className="embla__slide__inner">     
-              <h3 className="embla__slide__title">{info && info[index].song_title}</h3>     
-              <p className="embla__slide__filepath">{info && info[index].mp3}</p>     
-                <img
-                  className="embla__slide__img"
-                  src={mediaByIndex(index)}
-                  alt=""
-                />
+          {slides &&
+            info &&
+            slides.map((index) => (
+              <div className="embla__slide" key={index}>
+                <div className="embla__slide__inner">
+                  <h3 className="embla__slide__title">
+                    {info && info[index].song_title}
+                  </h3>
+                  <p className="embla__slide__filepath">
+                    {info && info[index].mp3}
+                  </p>
+                  <img
+                    className="embla__slide__img"
+                    src={mediaByIndex(index)}
+                    alt=""
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
       <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />

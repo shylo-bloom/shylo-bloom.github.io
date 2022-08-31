@@ -6,11 +6,7 @@ export const useWindowSize = () => {
     height: undefined,
   });
 
-  
   useEffect(() => {
-    
-		
-    
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
@@ -18,15 +14,14 @@ export const useWindowSize = () => {
       });
     }
     if (typeof window != "undefined") {
-    };
-    
-      window.addEventListener("resize", handleResize);
+    }
 
-      // Recursion
-      handleResize();
+    window.addEventListener("resize", handleResize);
 
-      return () => window.removeEventListener("resize", handleResize);
-    
+    // Recursion
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
   return windowSize;
 };

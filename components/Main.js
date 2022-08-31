@@ -12,27 +12,27 @@ const slides = Array.from(Array(SLIDE_COUNT).keys());
 const info = [
   {
     song_title: "song title 1",
-    mp3: "./mp3/WhenTheMorningComes.mp3"
+    mp3: "./mp3/WhenTheMorningComes.mp3",
   },
   {
     song_title: "song title 2",
-    mp3: "./mp3/file/path"
+    mp3: "./mp3/file/path",
   },
   {
     song_title: "song title 3",
-    mp3: "./mp3/file/path"
+    mp3: "./mp3/file/path",
   },
   {
     song_title: "song title 4",
-    mp3: "./mp3/file/path"
+    mp3: "./mp3/file/path",
   },
   {
     song_title: "song title 5",
-    mp3: "./mp3/file/path"
-  }
-]
+    mp3: "./mp3/file/path",
+  },
+];
 
-export default function Main() { 
+export default function Main() {
   const size = useWindowSize();
   const [modalWindowClass, setModalWindowClass] = useState("");
   const [transitionBackgroundClass, setTransitionBackgroundClass] =
@@ -60,8 +60,8 @@ export default function Main() {
   };
 
   const handleScroll = () => {
-    setScroll("scrolling")
-  }
+    setScroll("scrolling");
+  };
 
   const handleOpenClick = (e) => {
     e.preventDefault();
@@ -84,23 +84,33 @@ export default function Main() {
     if (!window.requestAnimationFrame) {
       setTimeout(setLayerDimensions, 300);
     } else {
-      window.addEventListener("scroll", handleScroll)
+      window.addEventListener("scroll", handleScroll);
       window.requestAnimationFrame(setLayerDimensions);
     }
   }, [size, handleScroll]);
 
   return (
     <div className={styles.container}>
-      <nav className={`menu ${scroll}`}
-                  style={{
-                    zIndex: menuZIndex,
-                  }}>
+      <nav
+        className={`menu ${scroll}`}
+        style={{
+          zIndex: menuZIndex,
+        }}
+      >
         <Title></Title>
         <div className="links">
-        <a className="menu__link"><p>Shop</p></a>
-        <a className="menu__link"><p>Tickets</p></a>
-        <a className="menu__link"><p>Contact</p></a>
-        <a className="menu__link"><p>Music</p></a>
+          <a className="menu__link">
+            <p>Shop</p>
+          </a>
+          <a className="menu__link">
+            <p>Tickets</p>
+          </a>
+          <a className="menu__link">
+            <p>Contact</p>
+          </a>
+          <a className="menu__link">
+            <p>Music</p>
+          </a>
         </div>
       </nav>
       <Head>
@@ -113,7 +123,7 @@ export default function Main() {
 
         {/* <h5>Harvest - Released ©2022</h5> */}
 
-        <EmblaCarousel slides={slides} info={info} /> 
+        <EmblaCarousel slides={slides} info={info} />
 
         <div className="center">
           <button
