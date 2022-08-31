@@ -4,6 +4,7 @@ import { Title } from "../components/Title";
 import styles from "../styles/Home.module.css";
 import { useWindowSize } from "../components/useWindowSize";
 import { useEffect, useState } from "react";
+import { EmailForm } from "../components/EmailForm";
 
 const SLIDE_COUNT = 5;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
@@ -36,9 +37,10 @@ export default function Home() {
   const [modalWindowClass, setModalWindowClass] = useState("");
   const [transitionBackgroundClass, setTransitionBackgroundClass] =
     useState("");
+
   const [menuZIndex, setMenuZIndex] = useState(2);
+
   const [scroll, setScroll] = useState("");
-  const [email, setEmail] = useState("")
 
   let frameProportion = 1.78,
     frames = 25; //png frame aspect ratio & number of png frames
@@ -80,13 +82,6 @@ export default function Home() {
     setMenuZIndex(2);
   };
 
-  const handleEmailSubmit = (e) => {
-    console.log(e.target.value)
-  }
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value)
-  }
-
   useEffect(() => {
     if (!window.requestAnimationFrame) {
       setTimeout(setLayerDimensions, 300);
@@ -121,8 +116,6 @@ export default function Home() {
 
         {/* <h5>Harvest - Released ©2022</h5> */}
 
-        {/* <AlbumCover></AlbumCover> */}
-
         <EmblaCarousel slides={slides} info={info} />
 
         <div className="center">
@@ -143,11 +136,7 @@ export default function Home() {
               Stay informed on upcoming shows, albums, promos tours and
               merchandise !
             </p>
-            <div>
-              <label htmlFor="#email">@: </label>
-              <input id="email" type="email" placeholder="email@domain.com" value={email} onChange={(e) => handleEmailChange(e)}></input>
-              <button type="submit" value={email} onClick={(e) => handleEmailSubmit(e)}>SEND</button>
-            </div>
+            <EmailForm></EmailForm>
           </div>
           <button
             className="modal-close"
@@ -166,41 +155,6 @@ export default function Home() {
             }}
           ></div>
         </div>
-
-        {/* <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p> */}
-
-        {/* <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div> */}
       </main>
       <footer className={styles.footer}>
         <a
