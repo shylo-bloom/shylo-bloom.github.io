@@ -5,12 +5,13 @@ import styles from "../styles/Home.module.css";
 import { useWindowSize } from "../components/useWindowSize";
 import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function Home() { 
   const size = useWindowSize();
   const [modalWindowClass, setModalWindowClass] = useState("");
   const [transitionBackgroundClass, setTransitionBackgroundClass] =
     useState("");
   const [menuZIndex, setMenuZIndex] = useState(2);
+  const [scroll, setScroll] = useState("");
 
   let frameProportion = 1.78,
     frames = 25; //png frame aspect ratio & number of png frames
@@ -28,6 +29,11 @@ export default function Home() {
       layerWidth = layerHeight * frameProportion;
     }
   };
+
+  const handleScroll = () => {
+    console.log("scrolling")
+    setScroll("scrolling")
+  }
 
   const handleOpenClick = (e) => {
     e.preventDefault();
@@ -52,13 +58,14 @@ export default function Home() {
     if (!window.requestAnimationFrame) {
       setTimeout(setLayerDimensions, 300);
     } else {
+      window.addEventListener("scroll", handleScroll)
       window.requestAnimationFrame(setLayerDimensions);
     }
-  }, [size]);
+  }, [size, handleScroll]);
 
   return (
     <div className={styles.container}>
-      <nav className="menu"
+      <nav className={`menu ${scroll}`}
                   style={{
                     zIndex: menuZIndex,
                   }}>
@@ -121,12 +128,12 @@ export default function Home() {
           ></div>
         </div>
 
-        <p className={styles.description}>
+        {/* <p className={styles.description}>
           Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
-        </p>
+        </p> */}
 
-        <div className={styles.grid}>
+        {/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
@@ -154,7 +161,7 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
       <footer className={styles.footer}>
         <a
@@ -162,15 +169,15 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {/* Powered by <span className={styles.logo}> */}
-          {/* <Image
+          Footer<span className={styles.logo}>
+          <img
             className="cd-album-cover"
             src="/vercel.svg"
             alt="Vercel Logo"
             width={72}
             height={16}
-          /> */}
-          {/* </span> */}
+          />
+          </span>
         </a>
       </footer>
     </div>
