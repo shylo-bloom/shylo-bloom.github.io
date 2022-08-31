@@ -75,10 +75,10 @@ export default function Home() {
                   }}>
         <Title></Title>
         <div className="links">
-        <p>Home</p>
-        <p>About</p>
-        <p>Contact Us</p>
-        <p>Music</p>
+        <a className="menu__link"><p>Home</p></a>
+        <a className="menu__link"><p>About</p></a>
+        <a className="menu__link"><p>Contact Us</p></a>
+        <a className="menu__link"><p>Music</p></a>
         </div>
       </nav>
       {/* {size.width}px / {size.height}px */}

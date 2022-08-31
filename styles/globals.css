@@ -44,6 +44,16 @@ nav.menu {
   width: 100%;
 }
 
+a.menu__link p{
+  color:#282828;
+}
+
+a.menu__link p:hover, 
+a.menu__link p:focus{
+  color:#ffffff;
+  cursor: pointer;
+}
+
 .title {
   font-size: 1rem;
   font-family: "Comfortaa";
@@ -457,6 +467,14 @@ Transition Layer
   height: 600px;
 }
 
+.embla__slide__title {
+  color: #fff;
+  font-size: 1rem;
+  position: absolute;
+  display: block;
+  z-index: 1;
+}
+
 .embla__slide__img {
   position: absolute;
   display: flex;
@@ -473,7 +491,7 @@ Transition Layer
   touch-action: manipulation;
   position: absolute;
   z-index: 1;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   border: 0;
   width: 30px;

@@ -32,10 +32,11 @@ const EmblaCarousel = ({ slides }) => {
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
               <div className="embla__slide__inner">
+                {/* <h3 className="embla__slide__title">{slide}</h3> */}
                 <img
                   className="embla__slide__img"
                   src={mediaByIndex(index)}
-                  alt="A cool cat."
+                  alt=""
                 />
               </div>
             </div>
