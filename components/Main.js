@@ -60,13 +60,11 @@ export default function Main() {
   };
 
   const handleScroll = () => {
-    console.log("scrolling")
     setScroll("scrolling")
   }
 
   const handleOpenClick = (e) => {
     e.preventDefault();
-    console.log(e);
     setTransitionBackgroundClass("visible opening");
     setMenuZIndex(1);
     setTimeout(function () {
