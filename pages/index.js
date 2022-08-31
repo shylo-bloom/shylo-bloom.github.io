@@ -1,9 +1,13 @@
 import Head from "next/head";
 import AlbumCover from "../components/AlbumCover";
+import EmblaCarousel from "../components/EmblaCarousel";
 import { Title } from "../components/Title";
 import styles from "../styles/Home.module.css";
 import { useWindowSize } from "../components/useWindowSize";
 import { useEffect, useState } from "react";
+
+const SLIDE_COUNT = 5;
+const slides = Array.from(Array(SLIDE_COUNT).keys());
 
 export default function Home() { 
   const size = useWindowSize();
@@ -88,7 +92,9 @@ export default function Home() {
 
         {/* <h5>Harvest - Released ©2022</h5> */}
 
-        <AlbumCover></AlbumCover>
+        {/* <AlbumCover></AlbumCover> */}
+
+        <EmblaCarousel slides={slides} />
 
         <div className="center">
           <button
@@ -169,7 +175,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Footer<span className={styles.logo}>
+          ©2022<span className={styles.logo}>
           <img
             className="cd-album-cover"
             src="/vercel.svg"
