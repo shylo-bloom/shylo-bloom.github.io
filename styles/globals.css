@@ -52,6 +52,7 @@ a.menu__link p:hover,
 a.menu__link p:focus{
   color:#ffffff;
   cursor: pointer;
+  transition: .5s
 }
 
 .title {
@@ -468,11 +469,17 @@ Transition Layer
 }
 
 .embla__slide__title {
+  font-family: 'Comfortaa';
   color: #fff;
-  font-size: 1rem;
-  position: absolute;
+  z-index: 5;
+  position: relative;
   display: block;
-  z-index: 1;
+}
+
+.embla__slide__filepath {
+color: white;
+    z-index: 1;
+    position: relative;
 }
 
 .embla__slide__img {

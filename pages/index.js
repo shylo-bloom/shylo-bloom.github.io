@@ -1,5 +1,4 @@
 import Head from "next/head";
-import AlbumCover from "../components/AlbumCover";
 import EmblaCarousel from "../components/EmblaCarousel";
 import { Title } from "../components/Title";
 import styles from "../styles/Home.module.css";
@@ -8,6 +7,29 @@ import { useEffect, useState } from "react";
 
 const SLIDE_COUNT = 5;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
+
+const info = [
+  {
+    song_title: "song title 1",
+    mp3: "./mp3/WhenTheMorningComes.mp3"
+  },
+  {
+    song_title: "song title 2",
+    mp3: "./mp3/file/path"
+  },
+  {
+    song_title: "song title 3",
+    mp3: "./mp3/file/path"
+  },
+  {
+    song_title: "song title 4",
+    mp3: "./mp3/file/path"
+  },
+  {
+    song_title: "song title 5",
+    mp3: "./mp3/file/path"
+  }
+]
 
 export default function Home() { 
   const size = useWindowSize();
@@ -75,9 +97,9 @@ export default function Home() {
                   }}>
         <Title></Title>
         <div className="links">
-        <a className="menu__link"><p>Home</p></a>
-        <a className="menu__link"><p>About</p></a>
-        <a className="menu__link"><p>Contact Us</p></a>
+        <a className="menu__link"><p>Shop</p></a>
+        <a className="menu__link"><p>Tickets</p></a>
+        <a className="menu__link"><p>Contact</p></a>
         <a className="menu__link"><p>Music</p></a>
         </div>
       </nav>
@@ -94,7 +116,7 @@ export default function Home() {
 
         {/* <AlbumCover></AlbumCover> */}
 
-        <EmblaCarousel slides={slides} />
+        <EmblaCarousel slides={slides} info={info} />
 
         <div className="center">
           <button
@@ -103,7 +125,7 @@ export default function Home() {
             variant="contained"
             color="secondary"
           >
-            Click
+            Download
           </button>
         </div>
 
@@ -114,7 +136,10 @@ export default function Home() {
               Stay informed on upcoming shows, albums, promos tours and
               merchandise !
             </p>
-            <p></p>
+            <form>
+              <label for="#email">@: </label>
+              <input id="email" type="email" placeholder="email@domain.com"></input>
+            </form>
           </div>
           <button
             className="modal-close"

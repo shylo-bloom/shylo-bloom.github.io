@@ -3,7 +3,7 @@ import { PrevButton, NextButton } from "./EmblaCarouselButtons";
 import useEmblaCarousel from "embla-carousel-react";
 import { mediaByIndex } from "../media";
 
-const EmblaCarousel = ({ slides }) => {
+const EmblaCarousel = ({ slides, info }) => {
   const [viewportRef, embla] = useEmblaCarousel({
     loop: true,
     skipSnaps: false
@@ -29,10 +29,12 @@ const EmblaCarousel = ({ slides }) => {
     <div className="embla">
       <div className="embla__viewport" ref={viewportRef}>
         <div className="embla__container">
-          {slides.map((index) => (
+          {slides && info && slides.map((index) => (
             <div className="embla__slide" key={index}>
-              <div className="embla__slide__inner">
-                {/* <h3 className="embla__slide__title">{slide}</h3> */}
+              <div className="embla__slide__inner">     
+              {console.log(info[index])}
+              <h3 className="embla__slide__title">{info && info[index].song_title}</h3>     
+              <p className="embla__slide__filepath">{info && info[index].mp3}</p>     
                 <img
                   className="embla__slide__img"
                   src={mediaByIndex(index)}
