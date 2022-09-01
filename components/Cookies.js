@@ -35,8 +35,8 @@ export const Cookies = () => {
           <div className="cookies__sub__text">
             We use cookies to give you a great user experience on our website.
             To learn more, read our
-            <a className="cookies__sub__text">Cookie Policy</a> or manage your settings at
-            <button className="cookies__pref">Cookie Preferences</button>.
+            &nbsp;<a href="#" className="cookies__sub__link">Cookie Policy</a> or manage your settings at
+            &nbsp;<a href="#" className="cookies__sub__link">Cookie Preferences</a> .
           </div>
         </div>
         <div className="cookies__accpt__wrapper">
