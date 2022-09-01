@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@madzadev/audio-player": "^1.1.11",
     "@mui/material": "^5.10.2",
     "embla-carousel-react": "^7.0.2",
     "next": "12.2.5",

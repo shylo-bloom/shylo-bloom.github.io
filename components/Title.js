@@ -4,7 +4,8 @@ export const Title = () => {
   const [text, setText] = useState("");
   let possible = '-+*/|}{[]~\\":;?/.><=+-_)(*&^%$#@!)}';
   let logoRandom = "";
-  let logoTitle = "Shylo Bloom";
+  // let logoTitle = "Shylo Bloom";
+  let logoTitle = "Title";
   let i = 0;
 
   useEffect(() => {

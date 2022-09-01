@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 import { useWindowSize } from "../components/useWindowSize";
 import { useEffect, useState } from "react";
 import { EmailForm } from "../components/EmailForm";
+import { MusicPlayer } from "./Player";
 
 const SLIDE_COUNT = 5;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
@@ -122,6 +123,9 @@ export default function Main() {
         {/* <h1 className={styles.title}><a>Shylo Bloom</a></h1> */}
 
         {/* <h5>Harvest - Released ©2022</h5> */}
+        <div>
+        <MusicPlayer></MusicPlayer>
+        </div>
 
         <EmblaCarousel slides={slides} info={info} />
 

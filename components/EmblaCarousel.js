@@ -37,9 +37,9 @@ const EmblaCarousel = ({ slides, info }) => {
                   <h3 className="embla__slide__title">
                     {info && info[index].song_title}
                   </h3>
-                  <p className="embla__slide__filepath">
+                  {/* <p className="embla__slide__filepath">
                     {info && info[index].mp3}
-                  </p>
+                  </p> */}
                   <img
                     className="embla__slide__img"
                     src={mediaByIndex(index)}
