@@ -6,6 +6,7 @@ import { useWindowSize } from "../components/useWindowSize";
 import { useEffect, useState } from "react";
 import { EmailForm } from "../components/EmailForm";
 import { MusicPlayer } from "./Player";
+import { Cookies } from "./Cookies";
 
 const SLIDE_COUNT = 5;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
@@ -113,7 +114,7 @@ export default function Main() {
             <p>Music</p>
           </a>
         </div>
-        <div class="nav-version nav-version__about hide-on-mobile"><span>Folio</span><span>Vol.1<span>—</span></span>
+        <div class="nav-version nav-version__about hide-on-mobile"><span>Harvest &nbsp;</span><span>Vol.1<span>—</span></span>
       </div>
       </nav>
       <Head>
@@ -121,6 +122,7 @@ export default function Main() {
         <meta name="description" content="Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+          <Cookies></Cookies>
       <main className="cd-main-content">
         {/* <h1 className={styles.title}><a>Shylo Bloom</a></h1> */}
         <h1 className="main__title"><a><Title></Title></a></h1>
@@ -131,7 +133,6 @@ export default function Main() {
         </div>
 
         <EmblaCarousel slides={slides} info={info} />
-
         <div className="center">
           <button
             className="cd-btn cd-modal-trigger"
