@@ -10,7 +10,6 @@ const EmblaCarousel = ({ slides, info }) => {
   });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
-
   const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
   const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
   const onSelect = useCallback(() => {
@@ -34,9 +33,9 @@ const EmblaCarousel = ({ slides, info }) => {
             slides.map((index) => (
               <div className="embla__slide" key={index}>
                 <div className="embla__slide__inner">
-                  <h3 className="embla__slide__title">
+                  {/* <h3 className="embla__slide__title">
                     {info && info[index].song_title}
-                  </h3>
+                  </h3> */}
                   {/* <p className="embla__slide__filepath">
                     {info && info[index].mp3}
                   </p> */}
@@ -52,6 +51,9 @@ const EmblaCarousel = ({ slides, info }) => {
       </div>
       <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
       <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+      <audio className="music__player" controls>
+        <source src="../mp3/WhenTheMorningComes.mp3" type="audio/mp3"></source>
+      </audio>
     </div>
   );
 };

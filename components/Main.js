@@ -5,7 +5,6 @@ import styles from "../styles/Home.module.css";
 import { useWindowSize } from "../components/useWindowSize";
 import { useEffect, useState } from "react";
 import { EmailForm } from "../components/EmailForm";
-import { MusicPlayer } from "./Player";
 import { Cookies } from "./Cookies";
 
 const SLIDE_COUNT = 5;
@@ -101,20 +100,20 @@ export default function Main() {
       >
         <Title></Title>
         <div className="links">
-          <a className="menu__link">
-            <p>Shop</p>
+          <a className="menu__link blue">
+            Shop
           </a>
-          <a className="menu__link">
-            <p>Tickets</p>
+          <a className="menu__link green">
+            Tickets
           </a>
-          <a className="menu__link">
-            <p>Contact</p>
+          <a className="menu__link yellow">
+            Contact
           </a>
-          <a className="menu__link">
-            <p>Music</p>
+          <a className="menu__link red">
+            Music
           </a>
         </div>
-        <div class="nav-version nav-version__about hide-on-mobile"><span>Harvest &nbsp;</span><span>Vol.1<span>—</span></span>
+        <div className="nav-version nav-version__about hide-on-mobile"><span>Harvest &nbsp;</span><span>Vol.1<span>—</span></span>
       </div>
       </nav>
       <Head>
@@ -129,7 +128,7 @@ export default function Main() {
 
         <h5>Harvest - Released ©2022</h5>
         <div>
-        <MusicPlayer></MusicPlayer>
+        {/* <MusicPlayer></MusicPlayer> */}
         </div>
 
         <EmblaCarousel slides={slides} info={info} />
@@ -170,6 +169,7 @@ export default function Main() {
             }}
           ></div>
         </div>
+      <div className="side-note hide-on-mobile"><span>ø &nbsp;</span><span>•••<span>&nbsp;—</span></span></div>
       </main>
     </div>
   );

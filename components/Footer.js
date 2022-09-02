@@ -6,7 +6,7 @@ export const Footer = ({ styles }) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        ©2022
+        Shylo Bloom ©2022
         <span className={styles.logo}>
           <img
             className="cd-album-cover"

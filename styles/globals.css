@@ -51,15 +51,43 @@ nav.menu {
   width: 100%;
 }
 
-a.menu__link p {
+a.menu__link {
   color: #282828;
 }
 
-a.menu__link p:hover,
-a.menu__link p:focus {
-  color: #ffffff;
+a.menu__link:hover,
+a.menu__link:focus {
+  /* color: #ffffff; */
   cursor: pointer;
   transition: 0.5s;
+}
+
+nav a {
+  position: relative;
+  display: inline-flex;
+  margin: 15px;
+  color: #282828;
+}
+
+.links {
+  display: inline-flex;
+  flex-flow: row-reverse;
+  width: 45vw;
+  position: relative;
+  align-items: center;
+}
+
+.red:hover {
+  color: #FF4136 !important;
+}
+.yellow:hover {
+  color: #FFDC00 !important;
+}
+.green:hover {
+  color: #3D9970 !important;
+}
+.blue:hover {
+  color:  hsl(200 100% 80%) !important;
 }
 
 @media (min-width: 1025px) and (max-width: 1920px) {
@@ -78,14 +106,23 @@ a.menu__link p:focus {
     font-weight: 500;
     line-height: 110%;
     display: none;
+    transform: rotate(90deg);
 }
+
 @media (min-width: 1025px) {
 .hide-on-mobile {
     display: block !important;
     margin-top: 20vw;
-    transform: rotate(90deg);
     color: #212121;
 }
+}
+
+.side-note.hide-on-mobile {
+  position: absolute;
+  display: block;
+  top: 10rem;
+  width: 100px;
+  transform: rotate(-90deg) !important;
 }
 
 .title {
@@ -122,20 +159,6 @@ a.menu__link p:focus {
   font-weight: 100 !important;
 }
 
-nav p {
-  position: relative;
-  display: inline-flex;
-  margin: 15px;
-  color: #282828;
-}
-
-.links {
-  display: inline-flex;
-  flex-flow: row-reverse;
-  width: 45vw;
-  position: relative;
-  align-items: center;
-}
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -155,7 +178,7 @@ Patterns - reusable parts of our design
 .cd-btn {
   display: inline-block;
   position: relative;
-  margin-top: -3rem;
+  margin-top: 7rem;
   padding: 1.6em 2.4em;
   font-size: 1.4rem;
   letter-spacing: 0.15em;
@@ -169,6 +192,17 @@ Patterns - reusable parts of our design
   z-index: 3;
   cursor: pointer;
 }
+
+.cd-btn:hover {
+  color: black;
+  background-color: transparent;
+}
+
+.cd-btn:active {
+  color: black;
+  background-color: transparent;
+}
+
 
 .no-touch .cd-btn:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
@@ -210,9 +244,9 @@ Main Content
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   padding-top: 10rem;
-  display: table;
+  display: block;
   text-align: center;
 }
 
@@ -293,6 +327,7 @@ Modal window
   height: 45px;
   width: 45px;
   border-radius: 50%;
+  border-color: white;
   background: rgba(0, 0, 0, 0.3) url(../img/cd-icon-close.svg) no-repeat center
     center;
   /* image replacement */
@@ -310,9 +345,11 @@ Modal window
     opacity 0.3s 0s;
   -moz-transition: -moz-transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
   transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+  cursor: pointer;
 }
 .no-touch .cd-modal .modal-close:hover {
   background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 .cd-modal.visible {
   opacity: 1;
@@ -546,12 +583,14 @@ Transition Layer
 }
 
 .embla__slide__img {
-  position: absolute;
-  display: flex;
-  top: 0%;
-  left: 0%;
-  object-fit: contain;
-  width: 100%;
+    position: absolute;
+    display: flex;
+    top: 0%;
+    left: 0%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: max-content;
+    height: 100%;
 }
 
 .embla__button {
@@ -561,14 +600,14 @@ Transition Layer
   touch-action: manipulation;
   position: absolute;
   z-index: 1;
-  top: 40%;
+  top: 50%;
   transform: translateY(-50%);
   border: 0;
   width: 30px;
   height: 30px;
   justify-content: center;
   align-items: center;
-  fill: #fff;
+  fill: black;
   padding: 0;
 }
 
@@ -583,11 +622,11 @@ Transition Layer
 }
 
 .embla__button--prev {
-  left: 27px;
+  left: -117px;
 }
 
 .embla__button--next {
-  right: 27px;
+  right: -117px;
 }
 
 /* Form */
@@ -595,33 +634,6 @@ input {
   color: #fff !important;
   outline-color: #fff;
 }
-/* 
-.MuiInputBase-input.MuiOutlinedInput-input.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input,
-.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-outlined.MuiFormLabel-colorPrimary.css-r527s4-MuiFormLabel-root-MuiInputLabel-root,
-.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.css-13vaet-MuiInputBase-root-MuiOutlinedInput-root {
-  outline-color: #fff;
-  border-color: #fff;
-  color: #fff;
-}
-
-.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused,
-.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root.Mui-hover,
-.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
-  border-color: #fff;
-  color: #fff;
-}
-
-.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
-  box-shadow: none;
-  color: #fff;
-}
-
-input#outlined-basic:focus,
-input#outlined-basic:hover {
-  color: #fff;
-  border-color: #fff;
-  outline-color: #fff;
-} */
 
 .email__form {
   color: #fff;
@@ -678,7 +690,7 @@ input#outlined-basic:hover {
   border: 2px solid black;
   border-radius: 8px;
   z-index: 10;
-  margin-top: 60vh;
+  margin-top: 40vh;
   margin-right: 0rem !important;
   margin-left: 55vw;
   background: #fffcf9 url(/_next/static/media/ricepaper2.edc5a088.jpeg);
@@ -713,6 +725,7 @@ h3.cookies__title {
     margin-bottom: 15px;
     width: 35px;
     height: 35px;
+    cursor: pointer;
 }
 
 .cookies__accpt__btn {
@@ -725,4 +738,12 @@ h3.cookies__title {
 
 .cookies__sub__link {
   text-decoration: underline;
+}
+
+
+audio.music__player {
+  margin-top: 2.5rem;
+  position: absolute;
+  transform: translate(-50%, 0);
+  width: 50vw;
 }
