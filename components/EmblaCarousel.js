@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { PrevButton, NextButton } from "./EmblaCarouselButtons";
 import useEmblaCarousel from "embla-carousel-react";
 import { mediaByIndex } from "../media";
+import Image from "next/image";
 
 const EmblaCarousel = ({ slides, info }) => {
   const [viewportRef, embla] = useEmblaCarousel({
@@ -33,16 +34,11 @@ const EmblaCarousel = ({ slides, info }) => {
             slides.map((index) => (
               <div className="embla__slide" key={index}>
                 <div className="embla__slide__inner">
-                  {/* <h3 className="embla__slide__title">
-                    {info && info[index].song_title}
-                  </h3> */}
-                  {/* <p className="embla__slide__filepath">
-                    {info && info[index].mp3}
-                  </p> */}
-                  <img
-                    className="embla__slide__img"
-                    src={mediaByIndex(index)}
-                    alt=""
+                  <Image  
+                      src={mediaByIndex(index)}
+                      className="embla__slide__img"
+                      objectFit={"contain"}
+                      layout='fill'
                   />
                 </div>
               </div>
