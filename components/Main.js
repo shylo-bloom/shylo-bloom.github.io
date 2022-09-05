@@ -81,14 +81,14 @@ export default function Main() {
     setMenuZIndex(2);
   };
 
-  useEffect((handleScroll, setLayerDimensions) => {
+  useEffect(() => {
     if (!window.requestAnimationFrame) {
       setTimeout(setLayerDimensions, 300);
     } else {
       window.addEventListener("scroll", handleScroll);
       window.requestAnimationFrame(setLayerDimensions);
     }
-  }, [size]);
+  }, [size, handleScroll, setLayerDimensions]);
 
   return (
     <div className={styles.container}>
