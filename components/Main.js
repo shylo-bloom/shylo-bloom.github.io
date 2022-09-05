@@ -123,12 +123,10 @@ export default function Main() {
       </Head>
           <Cookies></Cookies>
       <main className="cd-main-content">
-        {/* <h1 className={styles.title}><a>Shylo Bloom</a></h1> */}
         <h1 className="main__title"><a><Title></Title></a></h1>
 
         <h5>Harvest - Released ©2022</h5>
-        <div>
-        {/* <MusicPlayer></MusicPlayer> */}
+        <div>        
         </div>
 
         <EmblaCarousel slides={slides} info={info} />
