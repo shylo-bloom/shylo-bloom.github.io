@@ -145,9 +145,12 @@ export default function Main() {
 
         <div className={`cd-modal ${modalWindowClass}`}>
           <div className="modal-content">
-            <h1>Join Our Mailing List</h1>
+            <h1 className="main__title">Join Our Mailing List</h1>
             <p>
-              Stay informed on upcoming shows, albums, promos tours and
+              Enter your email below and we'll send you your free track.
+            </p>
+            <p>
+            Stay informed on upcoming shows, albums, promos, tours and
               merchandise !
             </p>
             <EmailForm></EmailForm>

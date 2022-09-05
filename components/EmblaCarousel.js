@@ -39,6 +39,7 @@ const EmblaCarousel = ({ slides, info }) => {
                       className="embla__slide__img"
                       objectFit={"contain"}
                       layout='fill'
+                      alt={`Shylo Bloom - Harvest Image`}
                   />
                 </div>
               </div>
@@ -48,7 +49,7 @@ const EmblaCarousel = ({ slides, info }) => {
       <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
       <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
       <audio className="music__player" controls>
-        <source src="../mp3/WhenTheMorningComes.mp3" type="audio/mp3"></source>
+        <source src="" type="audio/mp3"></source>
       </audio>
     </div>
   );

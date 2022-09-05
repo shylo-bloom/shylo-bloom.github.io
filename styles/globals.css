@@ -690,7 +690,7 @@ input {
   border: 2px solid black;
   border-radius: 8px;
   z-index: 10;
-  margin-top: 40vh;
+  margin-top: 55vh;
   margin-right: 0rem !important;
   margin-left: 55vw;
   background: #fffcf9 url(/_next/static/media/ricepaper2.edc5a088.jpeg);
@@ -734,6 +734,7 @@ h3.cookies__title {
   border: none;
   padding: .5rem 15px;
   margin-top: 15px;
+  color: #fff;
 }
 
 .cookies__sub__link {
@@ -742,7 +743,7 @@ h3.cookies__title {
 
 
 audio.music__player {
-  margin-top: 2.5rem;
+  margin-top: 0.5rem;
   position: absolute;
   transform: translate(-50%, 0);
   width: 50vw;
