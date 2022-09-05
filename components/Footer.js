@@ -8,13 +8,6 @@ export const Footer = ({ styles }) => {
       >
         Shylo Bloom ©2022
         <span className={styles.logo}>
-          <img
-            className="cd-album-cover"
-            src="/vercel.svg"
-            alt="Vercel Logo"
-            width={72}
-            height={16}
-          />
         </span>
       </a>
     </footer>

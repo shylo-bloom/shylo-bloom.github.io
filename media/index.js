@@ -6,6 +6,8 @@ import media5 from "./media-5.jpg";
 
 export const media = [media1, media2, media3, media4, media5];
 
+
 export const mediaByIndex = index => {
     return media[index].src
-};
+  };
+;

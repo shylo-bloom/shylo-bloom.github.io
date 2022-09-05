@@ -81,14 +81,14 @@ export default function Main() {
     setMenuZIndex(2);
   };
 
-  useEffect(() => {
+  useEffect((handleScroll, setLayerDimensions) => {
     if (!window.requestAnimationFrame) {
       setTimeout(setLayerDimensions, 300);
     } else {
       window.addEventListener("scroll", handleScroll);
       window.requestAnimationFrame(setLayerDimensions);
     }
-  }, [size, handleScroll]);
+  }, [size]);
 
   return (
     <div className={styles.container}>
@@ -147,7 +147,7 @@ export default function Main() {
           <div className="modal-content">
             <h1 className="main__title">Join Our Mailing List</h1>
             <p>
-              Enter your email below and we'll send you your free track.
+              Enter your email below and we&apos;ll send you your free track.
             </p>
             <p>
             Stay informed on upcoming shows, albums, promos, tours and

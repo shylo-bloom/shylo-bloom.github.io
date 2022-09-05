@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 export const Title = () => {
   const [text, setText] = useState("");
   let possible = '-+*/|}{[]~\\":;?/.><=+-_)(*&^%$#@!)}';
-  let logoRandom = "";
   let logoTitle = "Shylo Bloom";
+  let logoRandom = "";
   let i = 0;
-
+  
   useEffect(() => {
     setTimeout(function () {
       const generateRandomTitle = (i, logoRandom) => {
@@ -24,7 +24,7 @@ export const Title = () => {
         generateRandomTitle(i, logoRandom);
       }
     }, 500);
-  }, [logoRandom]);
+  }, [logoRandom, logoTitle, possible]);
 
   return <div className="title">{text && text}</div>;
 };
