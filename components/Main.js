@@ -6,6 +6,7 @@ import { useWindowSize } from "../components/useWindowSize";
 import { useEffect, useState } from "react";
 import { EmailForm } from "../components/EmailForm";
 import { Cookies } from "./Cookies";
+import { NavLinks } from "./NavLinks";
 
 const SLIDE_COUNT = 5;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
@@ -99,20 +100,7 @@ export default function Main() {
         }}
       >
         <Title></Title>
-        <div className="links">
-          <a className="menu__link blue">
-            Shop
-          </a>
-          <a className="menu__link green">
-            Tickets
-          </a>
-          <a className="menu__link yellow">
-            Contact
-          </a>
-          <a className="menu__link red">
-            Music
-          </a>
-        </div>
+        <NavLinks></NavLinks>
         <div className="nav-version nav-version__about hide-on-mobile"><span>Harvest &nbsp;</span><span>Vol.1<span>—</span></span>
       </div>
       </nav>
